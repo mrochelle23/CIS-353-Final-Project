@@ -1,9 +1,3 @@
-CREATE TABLE Camera (
-    camera_id INT PRIMARY KEY,
-    camera_model VARCHAR(100),
-    install_date DATE
-);
-
 CREATE TABLE Environment (
     environment_id INT PRIMARY KEY,
     description TEXT
