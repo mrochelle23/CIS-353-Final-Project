@@ -7,6 +7,7 @@ CREATE TABLE Species {
 }
 
 -- Creating the OBSERVATION table
+-- Weak entity dependet on Image and Species
 CREATE TABLE Observation {
     image_id INT,
     observation_num INT,
