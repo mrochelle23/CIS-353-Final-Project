@@ -22,7 +22,7 @@ INSERT INTO Environment VALUES(202, )
 INSERT INTO Environment VALUES(203, )
 
 -- INSERT INTO Location (location_id, location_name, camera_id, environment_id)
-INSERT INTO Location VALUES(301, , ,)
-INSERT INTO Location VALUES(302, , ,)
-INSERT INTO Location VALUES(303, , ,)
+INSERT INTO Location VALUES(301, 'Michigan Dry Northern Forest', 1, 201)
+INSERT INTO Location VALUES(302, 'Ohio Laker Erie Marsh Region', 2, 202)
+INSERT INTO Location VALUES(303, 'Indiana Great Lakes Plain', 3, 203)
 -- Queries
