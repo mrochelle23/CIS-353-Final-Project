@@ -1,6 +1,8 @@
 -- Q1 - Self Join
 -- Compare the Observation table to itself to find instanced where the same species
 -- was recorded multiple times ina single image with different behavior types
+
+-- Works as of 4/22
 SELECT
     A.image_id,
     A.species_id,
@@ -18,6 +20,7 @@ WHERE
 -- Q2 - Join involving four relations
 -- Retreives the common name of species, the behavior observed,
 -- the model of the camera that cpatured it, and the location of that camera
+-- works as of 4/22
 SELECT
     S.common_name,
     O.behavior_type,
@@ -38,6 +41,7 @@ ORDER BY
 -- Q3 - GROUP BY, HAVING, and ORDER BY
 -- Shows species that have been observed more than once across all images
 -- ordered by the total number of individuals seen
+-- works as of 4/22
 SELECT
     S.common_name,
     SUM(O.species_count) AS total_count,
@@ -56,6 +60,7 @@ ORDER BY
 
 -- Q4 - Non-correlated subquery
 -- Lists all images that contian ovservations of speices classifies as "Endangered"
+-- works as of 4/22
 SELECT
     I.image_id,
     capture_timestamp
@@ -73,13 +78,16 @@ WHERE
 -- Q5 - UNION
 -- Combines a list of species foun in 'Cloud' storage images
 -- with those found in 'Local' storage images
-SELECT S.common_name
+-- added a small change to add another row; works as of 4/22
+SELECT S.common_name, I.storage_type
 FROM Species S
 JOIN Observation O ON S.species_id = O.species_id
 JOIN Image I ON O.image_id = I.image_id
 WHERE I.storage_type = 'Cloud'
+
 UNION
-SELECT S.common_name
+
+SELECT S.common_name, I.storage_type
 FROM Species S
 JOIN Observation O ON S.species_id = O.species_id
 JOIN Image I ON O.image_id = I.image_id
@@ -88,9 +96,10 @@ WHERE I.storage_type = 'Local';
 
 -- Q6 6 - SUM, AVG, MAX, MIN
 -- Provides statistics on the number of animals per observation
+-- Added a ROUND for AVG for a cleaner output
 SELECT
     SUM(species_count) AS total_animals,
-    AVG(species_count) AS average_per_obs,
+    ROUND(AVG(species_count), 2) AS average_per_obs,
     MAX(species_count) AS largest_group,
     MIN(species_count) AS smallest_group
 FROM

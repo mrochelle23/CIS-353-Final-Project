@@ -41,6 +41,11 @@ VALUES (101, 1, 2, 'Foraging', 501);
 INSERT INTO Observation (image_id, observation_num, species_count, behavior_type, species_id)
 VALUES (101, 2, 1, 'Running', 502);
 
+-- added another insert to increase rows for query 5 in queries
+INSERT INTO Observation (image_id, observation_num, species_count, behavior_type, species_id)
+VALUES (102, 1, 1, 'Standing', 503);
+
+
 INSERT INTO Observation (image_id, observation_num, species_count, behavior_type, species_id)
 VALUES (103, 1, 1, 'Resting', 501);
 
