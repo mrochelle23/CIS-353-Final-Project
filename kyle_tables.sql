@@ -39,7 +39,3 @@ VALUES (302, 'Ohio Lake Erie Marsh Region', 2, 202);
 
 INSERT INTO Location (location_id, location_name, camera_id, environment_id)
 VALUES (303, 'Indiana Great Lakes Plain', 3, 203);
-
--- Verify loaded data
-SELECT * FROM Environment;
-SELECT * FROM Location;
