@@ -49,7 +49,7 @@ JOIN
 GROUP BY
     S.common_name
 HAVING
-    COUNT(O.observation_num) > 0 -- Only include species observed more than once
+    COUNT(O.observation_num) > 0 -- Only include species observed more than zero times
 ORDER BY
     total_count DESC; -- Order by total count of individuals seen, highest first
 
