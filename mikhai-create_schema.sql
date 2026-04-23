@@ -11,7 +11,9 @@ CREATE TABLE Species (
 CREATE TABLE Observation (
     image_id NUMBER,
     observation_num NUMBER,
-    species_count NUMBER NOT NULL CHECK (species_count > 0),
+    -- Added the CONSTRAINT keyword here
+    -- Added Count_Postive CHECK constraint to ensure species_count is greater than 0
+    species_count NUMBER NOT NULL CONSTRAINT Count_Positive CHECK (species_count > 0),
     behavior_type VARCHAR2(100),
     species_id NUMBER NOT NULL,
     PRIMARY KEY (image_id, observation_num),
