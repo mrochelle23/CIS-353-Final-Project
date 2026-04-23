@@ -49,13 +49,13 @@ JOIN
 GROUP BY
     S.common_name
 HAVING
-    COUNT(O.observation_num) > 1 -- Only include species observed more than once
+    COUNT(O.observation_num) > 0 -- Only include species observed more than once
 ORDER BY
     total_count DESC; -- Order by total count of individuals seen, highest first
 
 
 -- Q4 - Non-correlated subquery
--- Lists all images that contian ovservations of speices classifies as "Endangered"
+-- Lists all images that contain observations of species classified as "Endangered"
 SELECT
     I.image_id,
     capture_timestamp
