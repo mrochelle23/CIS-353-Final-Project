@@ -3,7 +3,7 @@
 
 CREATE TABLE Environment (
     environment_id NUMBER PRIMARY KEY,
-    description VARCHAR2(200)
+    description VARCHAR2(200) Constraint Valid_Env CHECK (description IS NOT NULL)
 );
 
 CREATE TABLE Location (
